@@ -1,3 +1,4 @@
+  
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -19,24 +20,23 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+      
     - name: Setup Node.js environment
-      uses: actions/setup-node@v1.4.2
-      with: 
+      uses: actions/setup-node@v2-beta
+      with:
         version: 12
-        
-    - name: GitHub Action for Yarn
+           
+    - name: Github Action for yarn
       uses: Borales/actions-yarn@v2.1.0
       with:
-        # Yarn command
+        # yarn command
         cmd: install # npm install/ yarn install
-    
+        
     - name: Creating build
       run: yarn build
-    
-    - name: installing surge  
+      
+    - name: Installing surge
       run: npm install -g surge
     
-    - name: deploying on surge
-      run: surge ./build http://contextcounterandreducercounter.surge.sh/ --token ${{secrets.SURGE_TOKEN6}}
-      
+    - name: Deploying on surge
+      run: surge ./build http://contextcounterandreducercounter.surge.sh/ --token ${{ secrets.SURGE_TOKEN6 }}
