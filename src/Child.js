@@ -11,7 +11,7 @@ const Child = () => {
             <h4>Counter value is: {counterValue[0]}</h4>
 
             <button onClick={()=> {counterValue[1](++counterValue[0])}}>
-                Increment counter
+                Increment zzz
             </button>
         </div>
     )
