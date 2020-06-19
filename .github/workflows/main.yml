@@ -39,3 +39,4 @@ jobs:
     
     - name: deploying on surge
       run: surge ./build http://contextandreducercounter.surge.sh/ --token ${{secrets.SURGE_TOKEN6}}
+      
